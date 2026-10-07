@@ -1,0 +1,18 @@
+# Makefile_736 -- RemoteOps (IT24103736)
+# Build:  make -f Makefile_736
+# Clean:  make -f Makefile_736 clean
+CC     = gcc
+CFLAGS = -Wall -Wextra -std=gnu11 -O2 -pthread
+
+all: agent_736 controller_736
+
+agent_736: agent_736.c
+	$(CC) $(CFLAGS) -o $@ $<
+
+controller_736: controller_736.c
+	$(CC) $(CFLAGS) -o $@ $<
+
+clean:
+	rm -f agent_736 controller_736
+
+.PHONY: all clean
